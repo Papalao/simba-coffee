@@ -4,48 +4,54 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Simba Coffee — Cafe & Green Coffee Export</title>
-<meta name="description" content="Simba Coffee: Tanzanian green coffee export & cafe. Order online, get a proforma, pay via LIPA Namba 6121 3863, and contact our team."/>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23facc15'/%3E%3Ctext x='50' y='62' font-size='58' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Order cafe drinks and Tanzanian green coffee for export. Instant proforma, LIPA Namba 6121 3863, WhatsApp contact."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-  html,body { background:#0a0a0a; color:#e5e5e5; }
-  .glass { background: rgba(20,20,20,.6); backdrop-filter:saturate(120%) blur(10px); }
-  .card { border:1px solid #262626; }
-  .tab a{padding:.5rem 1rem;border-radius:9999px;border:1px solid #303030}
-  .tab a:hover{border-color:#facc15}
+  :root{--bg:#0a0a0a;--card:#111214;--border:#1f2125;}
+  html,body{background:var(--bg);color:#e7e7e7;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+  .glass{background:rgba(17,18,20,.7);backdrop-filter:blur(10px)}
+  .card{border:1px solid var(--border)}
+  .btn{border-radius:14px;padding:.75rem 1.1rem}
+  .btn-primary{background:#facc15;color:#111;font-weight:700}
+  .btn-ghost{border:1px solid var(--border)}
+  .pill{border:1px solid var(--border);border-radius:9999px;padding:.4rem .8rem}
+  .hero-shadow{box-shadow:inset 0 -180px 180px rgba(0,0,0,.6)}
 </style>
 </head>
-<body class="min-h-screen">
+<body>
+
 <!-- NAV -->
-<header class="sticky top-0 z-50 glass border-b border-neutral-800">
+<header class="sticky top-0 z-50 glass border-b border-[var(--border)]">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
     <div class="text-2xl font-black tracking-tight">SIMBA<span class="text-yellow-400"> COFFEE</span></div>
-    <nav class="hidden md:flex gap-3 text-sm tab">
-      <a href="#hero">Hero</a>
-      <a href="#cafe">Cafe</a>
-      <a href="#about">About</a>
-      <a href="#impact">Impact</a>
-      <a href="#export">Export</a>
+    <nav class="hidden md:flex gap-2 text-sm">
+      <a class="pill" href="#hero">Hero</a>
+      <a class="pill" href="#cafe">Cafe</a>
+      <a class="pill" href="#about">About</a>
+      <a class="pill" href="#impact">Impact</a>
+      <a class="pill" href="#export">Export</a>
     </nav>
   </div>
 </header>
 
 <!-- HERO -->
-<section id="hero" class="relative overflow-hidden">
-  <div class="absolute inset-0">
-    <img alt="Coffee farms" src="https://images.unsplash.com/photo-1526401485004-2fda9f4b269a?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover opacity-30">
-  </div>
-  <div class="max-w-7xl mx-auto px-4 py-20 relative">
-    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+<section id="hero" class="relative">
+  <img src="https://images.unsplash.com/photo-1526401485004-2fda9f4b269a?q=80&w=1600&auto=format&fit=crop"
+       alt="Coffee farms" class="w-full h-[56vh] md:h-[66vh] object-cover hero-shadow">
+  <div class="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,.85)] via-transparent to-[rgba(10,10,10,.3)]"></div>
+  <div class="absolute inset-x-0 bottom-0 max-w-7xl mx-auto px-4 py-10">
+    <h1 class="text-4xl md:text-6xl font-black leading-tight">
       Tanzanian Coffee with Purpose
       <span class="block text-yellow-400">Order Cafe Drinks & Green Coffee for Export</span>
     </h1>
-    <p class="mt-6 max-w-2xl text-neutral-200">
-      We connect smallholder farmers and women-led cooperatives to global markets. From cupping to compliance, Simba Coffee manages the entire export journey — and serves great drinks at our cafe.
+    <p class="mt-4 max-w-2xl text-neutral-200">
+      We connect smallholder farmers and women-led cooperatives to global markets. From cupping to compliance, Simba manages the export journey — and serves great drinks at our cafe.
     </p>
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a href="#cafe" class="px-5 py-3 rounded-2xl bg-yellow-400 text-neutral-900 font-semibold">Order from Cafe</a>
-      <a href="#export" class="px-5 py-3 rounded-2xl border border-neutral-700 hover:border-yellow-400">Green Coffee Export</a>
+    <div class="mt-6 flex gap-3">
+      <a href="#cafe" class="btn btn-primary">Order from Cafe</a>
+      <a href="#export" class="btn btn-ghost">Green Coffee Export</a>
     </div>
   </div>
 </section>
@@ -55,78 +61,80 @@
   <div class="flex items-end justify-between flex-wrap gap-4">
     <div>
       <h2 class="text-3xl font-bold">Cafe — Order & Pay</h2>
-      <p class="text-neutral-300">Choose your drink, add to cart, generate a proforma, then pay via <b>LIPA Namba <span class="text-yellow-400" id="cafeLipa"></span></b>.</p>
+      <p class="text-neutral-300">Add drinks to cart, generate a proforma, then pay via <b>LIPA Namba <span class="text-yellow-400" id="cafeLipa"></span></b>.</p>
     </div>
     <div class="flex gap-2 text-sm">
-      <button data-cat="all" class="cat px-3 py-1 rounded-xl border border-neutral-700 hover:border-yellow-400">All</button>
-      <button data-cat="classic" class="cat px-3 py-1 rounded-xl border border-neutral-700 hover:border-yellow-400">Classic</button>
-      <button data-cat="signature" class="cat px-3 py-1 rounded-xl border border-neutral-700 hover:border-yellow-400">Signature</button>
-      <button data-cat="noncoffee" class="cat px-3 py-1 rounded-xl border border-neutral-700 hover:border-yellow-400">Non-Coffee</button>
-      <button data-cat="caffeinefree" class="cat px-3 py-1 rounded-xl border border-neutral-700 hover:border-yellow-400">Caffeine-free</button>
+      <button data-cat="all" class="pill cat">All</button>
+      <button data-cat="classic" class="pill cat">Classic</button>
+      <button data-cat="signature" class="pill cat">Signature</button>
+      <button data-cat="noncoffee" class="pill cat">Non-Coffee</button>
+      <button data-cat="caffeinefree" class="pill cat">Caffeine-free</button>
     </div>
   </div>
 
   <div id="cafeGrid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6"></div>
 
-  <!-- Cart -->
+  <!-- CART -->
   <div class="mt-8 rounded-2xl glass card p-6">
-    <div class="flex items-center justify-between flex-wrap gap-3">
+    <div class="flex items-center justify-between">
       <h3 class="text-xl font-semibold">Your Cart</h3>
-      <div class="text-sm text-neutral-400">Prices TZS (incl. VAT)</div>
+      <div class="text-sm text-neutral-400">TZS (incl. VAT)</div>
     </div>
-    <div id="cartLines" class="mt-4 divide-y divide-neutral-800"></div>
-    <div class="mt-6 grid sm:grid-cols-3 gap-4">
-      <div class="rounded-xl border border-neutral-800 p-4">
-        <div class="text-sm text-neutral-400">Items</div>
+    <div id="cartLines" class="mt-4 divide-y divide-[var(--border)]"></div>
+
+    <div class="mt-5 grid sm:grid-cols-3 gap-4">
+      <div class="rounded-xl border border-[var(--border)] p-4">
+        <div class="text-xs text-neutral-400">Items</div>
         <div id="cartItems" class="text-2xl font-bold">0</div>
       </div>
-      <div class="rounded-xl border border-neutral-800 p-4">
-        <div class="text-sm text-neutral-400">Total</div>
+      <div class="rounded-xl border border-[var(--border)] p-4">
+        <div class="text-xs text-neutral-400">Total</div>
         <div id="cartTotal" class="text-2xl font-bold">TZS 0</div>
       </div>
-      <div class="rounded-xl border border-neutral-800 p-4">
-        <div class="text-sm text-neutral-400">LIPA (Selcom)</div>
+      <div class="rounded-xl border border-[var(--border)] p-4">
+        <div class="text-xs text-neutral-400">LIPA (Selcom)</div>
         <div class="text-2xl font-black text-yellow-400" id="cartLipa"></div>
       </div>
     </div>
+
     <div class="mt-5 flex flex-wrap gap-3">
-      <button id="btnCafeProforma" class="px-5 py-3 rounded-2xl bg-yellow-400 text-neutral-900 font-semibold">Proforma (Cafe)</button>
-      <a id="btnCafeWA" target="_blank" class="px-5 py-3 rounded-2xl border border-neutral-700 hover:border-yellow-400">Send Order on WhatsApp</a>
-      <a id="btnCafeEmail" class="px-5 py-3 rounded-2xl border border-neutral-700 hover:border-yellow-400">Email Order</a>
+      <button id="btnCafeProforma" class="btn btn-primary">Open Proforma (Cafe)</button>
+      <a id="btnCafeWA" target="_blank" class="btn btn-ghost">Send Order on WhatsApp</a>
+      <a id="btnCafeEmail" class="btn btn-ghost">Email Order</a>
     </div>
-    <p class="text-neutral-400 text-xs mt-2">Tip: after LIPA payment, tap “Send Order on WhatsApp” to notify our barista instantly (free click-to-chat).</p>
+    <p class="text-neutral-400 text-xs mt-2">After LIPA payment, tap WhatsApp to notify the barista (free click-to-chat).</p>
   </div>
 </section>
 
-<!-- ABOUT + TEAM -->
+<!-- ABOUT & TEAM -->
 <section id="about" class="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-2 gap-10">
   <div>
     <h2 class="text-3xl font-bold mb-2">About Simba Coffee</h2>
     <p class="text-neutral-300">
-      <b>Simba Universal Company Ltd</b> is a Dar es Salaam-based exporter of premium Tanzanian green coffee and operator of Simba Cafe.
-      We work across Kilimanjaro, Mbeya, and Songwe to source traceable lots from smallholders, with a strong focus on <b>women producers</b>, <b>rural jobs</b>, and <b>sustainability</b>.
+      <b>Simba Universal Company Ltd</b> (Dar es Salaam) exports traceable Tanzanian green coffee and operates Simba Cafe.
+      We champion <b>women producers</b>, <b>rural jobs</b>, and <b>sustainable farming</b> while giving Tanzanians better market access.
     </p>
     <ul class="mt-5 grid gap-3">
-      <li class="p-4 rounded-xl glass card"><span class="text-yellow-400">▸</span> Direct farmer relationships & market access for Tanzanians</li>
+      <li class="p-4 rounded-xl glass card"><span class="text-yellow-400">▸</span> Direct farmer relationships across Kilimanjaro, Mbeya & Songwe</li>
       <li class="p-4 rounded-xl glass card"><span class="text-yellow-400">▸</span> Women-led supply chains and youth employment</li>
       <li class="p-4 rounded-xl glass card"><span class="text-yellow-400">▸</span> Q-grading, milling oversight, export documentation & LC support</li>
-      <li class="p-4 rounded-xl glass card"><span class="text-yellow-400">▸</span> Fast samples, proformas, and transparent pricing</li>
+      <li class="p-4 rounded-xl glass card"><span class="text-yellow-400">▸</span> Transparent pricing, fast samples and proformas</li>
     </ul>
   </div>
   <div>
-    <h3 class="text-2xl font-semibold mb-4">Our Team</h3>
+    <h3 class="text-2xl font-semibold mb-4">Team</h3>
     <div class="grid sm:grid-cols-2 gap-5">
       <div class="rounded-2xl glass card p-4">
-        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover rounded-xl" alt="Anton"/>
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" class="w-full h-44 object-cover rounded-xl" alt="Anton">
         <div class="mt-3 font-semibold">Anton Kazmin</div>
         <div class="text-yellow-400 text-sm">Founder & Export Lead</div>
         <p class="text-neutral-300 text-sm mt-1">Farmer partnerships, logistics & export compliance.</p>
       </div>
       <div class="rounded-2xl glass card p-4">
-        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=600&auto=format&fit=crop" class="w-full h-40 object-cover rounded-xl" alt="Rachel"/>
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop" class="w-full h-44 object-cover rounded-xl" alt="Rachel">
         <div class="mt-3 font-semibold">Rachel Kazmin</div>
         <div class="text-yellow-400 text-sm">Quality & Origin</div>
-        <p class="text-neutral-300 text-sm mt-1">Cup profiles, lot selection, QA from farm to mill.</p>
+        <p class="text-neutral-300 text-sm mt-1">Cup profiles, lot selection, and QA from farm to mill.</p>
       </div>
     </div>
   </div>
@@ -136,17 +144,17 @@
 <section id="impact" class="max-w-7xl mx-auto px-4 py-14 grid md:grid-cols-3 gap-6">
   <div class="rounded-2xl glass card p-6">
     <div class="text-4xl font-black text-yellow-400">+3,500</div>
-    <div class="mt-2 text-lg font-semibold">Farmers reached</div>
-    <p class="text-neutral-300 mt-1">Aggregation through AMCOS & independent groups</p>
+    <div class="mt-2 text-lg font-semibold">Farmers Reached</div>
+    <p class="text-neutral-300 mt-1">Aggregation via AMCOS & independent groups</p>
   </div>
   <div class="rounded-2xl glass card p-6">
     <div class="text-4xl font-black text-yellow-400">40%</div>
-    <div class="mt-2 text-lg font-semibold">Women-led lots</div>
+    <div class="mt-2 text-lg font-semibold">Women-Led Lots</div>
     <p class="text-neutral-300 mt-1">Prioritising women producers & leadership</p>
   </div>
   <div class="rounded-2xl glass card p-6">
     <div class="text-4xl font-black text-yellow-400">100%</div>
-    <div class="mt-2 text-lg font-semibold">Traceable shipments</div>
+    <div class="mt-2 text-lg font-semibold">Traceable Shipments</div>
     <p class="text-neutral-300 mt-1">Lot IDs, moisture, density & cupping sheets</p>
   </div>
 </section>
@@ -155,51 +163,54 @@
 <section id="export" class="max-w-7xl mx-auto px-4 py-14">
   <div class="rounded-3xl glass card p-6 md:p-8">
     <h2 class="text-3xl font-bold">Green Coffee Export — Proforma & LIPA</h2>
-    <p class="text-neutral-300">Fill in buyer details and product — we’ll generate a printable proforma.</p>
+    <p class="text-neutral-300">Enter buyer and product details; get a printable proforma.</p>
+
     <form id="exportForm" class="grid md:grid-cols-2 gap-6 mt-6">
       <div class="space-y-4">
-        <label class="block"><div class="text-xs text-neutral-400 mb-1">Company</div><input name="company" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"/></label>
+        <label class="block"><div class="text-xs text-neutral-400 mb-1">Company</div><input name="company" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"/></label>
         <div class="grid grid-cols-2 gap-4">
-          <label class="block"><div class="text-xs text-neutral-400 mb-1">Contact</div><input name="contact" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"/></label>
-          <label class="block"><div class="text-xs text-neutral-400 mb-1">Country</div><input name="country" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"/></label>
+          <label class="block"><div class="text-xs text-neutral-400 mb-1">Contact</div><input name="contact" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"/></label>
+          <label class="block"><div class="text-xs text-neutral-400 mb-1">Country</div><input name="country" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"/></label>
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <label class="block"><div class="text-xs text-neutral-400 mb-1">Email</div><input name="email" type="email" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"/></label>
-          <label class="block"><div class="text-xs text-neutral-400 mb-1">Phone / WhatsApp</div><input name="phone" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"/></label>
+          <label class="block"><div class="text-xs text-neutral-400 mb-1">Email</div><input name="email" type="email" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"/></label>
+          <label class="block"><div class="text-xs text-neutral-400 mb-1">Phone / WhatsApp</div><input name="phone" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"/></label>
         </div>
         <div class="grid grid-cols-2 gap-4">
           <label class="block"><div class="text-xs text-neutral-400 mb-1">Incoterm</div>
-            <select name="incoterm" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2">
+            <select name="incoterm" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2">
               <option>FOB Dar es Salaam</option><option>CIF</option><option>EXW</option>
             </select>
           </label>
-          <label class="block"><div class="text-xs text-neutral-400 mb-1">Port / Destination</div><input name="port" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"/></label>
+          <label class="block"><div class="text-xs text-neutral-400 mb-1">Port / Destination</div><input name="port" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"/></label>
         </div>
       </div>
       <div class="space-y-4">
         <label class="block"><div class="text-xs text-neutral-400 mb-1">Product</div>
-          <select name="product" id="exportProduct" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"></select>
+          <select name="product" id="exportProduct" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"></select>
         </label>
         <label class="block"><div class="text-xs text-neutral-400 mb-1">Process</div>
-          <select name="process" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"><option>Washed</option><option>Natural</option><option>Honey</option></select>
+          <select name="process" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"><option>Washed</option><option>Natural</option><option>Honey</option></select>
         </label>
         <div class="grid grid-cols-3 gap-4">
-          <label class="block"><div class="text-xs text-neutral-400 mb-1">Bags (60kg)</div><input name="bags" type="number" value="100" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"/></label>
-          <label class="block"><div class="text-xs text-neutral-400 mb-1">Price / kg (USD)</div><input name="pricePerKg" type="number" step="0.01" value="8.40" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"/></label>
-          <label class="block"><div class="text-xs text-neutral-400 mb-1">Currency</div><select name="currency" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2"><option>USD</option><option>TZS</option></select></label>
+          <label class="block"><div class="text-xs text-neutral-400 mb-1">Bags (60kg)</div><input name="bags" type="number" value="100" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"/></label>
+          <label class="block"><div class="text-xs text-neutral-400 mb-1">Price / kg (USD)</div><input name="pricePerKg" type="number" step="0.01" value="8.40" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"/></label>
+          <label class="block"><div class="text-xs text-neutral-400 mb-1">Currency</div><select name="currency" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2"><option>USD</option><option>TZS</option></select></label>
         </div>
-        <label class="block"><div class="text-xs text-neutral-400 mb-1">Notes</div><textarea name="notes" rows="4" class="w-full rounded-xl bg-neutral-950 border border-neutral-800 px-3 py-2" placeholder="Quality, screen size, moisture target, financing terms…"></textarea></label>
+        <label class="block"><div class="text-xs text-neutral-400 mb-1">Notes</div><textarea name="notes" rows="4" class="w-full rounded-xl bg-[#0d0e10] border border-[var(--border)] px-3 py-2" placeholder="Quality, screen size, moisture target, financing terms…"></textarea></label>
       </div>
     </form>
+
     <div class="mt-6 grid md:grid-cols-3 gap-6">
-      <div class="rounded-2xl border border-neutral-800 p-5"><div class="text-sm text-neutral-400">Quantity</div><div id="expKg" class="text-2xl font-bold">0 kg</div></div>
-      <div class="rounded-2xl border border-neutral-800 p-5"><div class="text-sm text-neutral-400">Est. Amount</div><div id="expAmt" class="text-2xl font-bold">$0.00</div></div>
-      <div class="rounded-2xl border border-neutral-800 p-5"><div class="text-sm text-neutral-400">LIPA</div><div class="text-2xl font-black text-yellow-400" id="expLipa"></div></div>
+      <div class="rounded-2xl border border-[var(--border)] p-5"><div class="text-xs text-neutral-400">Quantity</div><div id="expKg" class="text-2xl font-bold">0 kg</div></div>
+      <div class="rounded-2xl border border-[var(--border)] p-5"><div class="text-xs text-neutral-400">Est. Amount</div><div id="expAmt" class="text-2xl font-bold">$0.00</div></div>
+      <div class="rounded-2xl border border-[var(--border)] p-5"><div class="text-xs text-neutral-400">LIPA</div><div class="text-2xl font-black text-yellow-400" id="expLipa"></div></div>
     </div>
+
     <div class="mt-6 flex flex-wrap gap-3">
-      <button id="btnExportProforma" class="px-5 py-3 rounded-2xl bg-yellow-400 text-neutral-900 font-semibold">Proforma (Export)</button>
-      <a id="btnExportWA" target="_blank" class="px-5 py-3 rounded-2xl border border-neutral-700 hover:border-yellow-400">Chat on WhatsApp</a>
-      <a id="btnExportEmail" class="px-5 py-3 rounded-2xl border border-neutral-700 hover:border-yellow-400">Email Us</a>
+      <button id="btnExportProforma" class="btn btn-primary">Open Proforma (Export)</button>
+      <a id="btnExportWA" target="_blank" class="btn btn-ghost">Chat on WhatsApp</a>
+      <a id="btnExportEmail" class="btn btn-ghost">Email Us</a>
     </div>
   </div>
 </section>
@@ -209,12 +220,12 @@
   <div class="rounded-2xl glass card p-6">
     <div class="font-semibold mb-2">Contact Simba</div>
     <div class="flex flex-wrap gap-3 text-sm">
-      <div class="rounded-xl border border-neutral-800 px-4 py-2">Email: <a class="text-yellow-400" href="mailto:sales@simba.coffee">sales@simba.coffee</a></div>
-      <div class="rounded-xl border border-neutral-800 px-4 py-2">WhatsApp: <a class="text-yellow-400" id="waFooter" target="_blank"></a></div>
-      <div class="rounded-xl border border-neutral-800 px-4 py-2">Dar es Salaam, Tanzania</div>
+      <div class="rounded-xl border border-[var(--border)] px-4 py-2">Email: <a class="text-yellow-400" href="mailto:sales@simba.coffee">sales@simba.coffee</a></div>
+      <div class="rounded-xl border border-[var(--border)] px-4 py-2">WhatsApp: <a class="text-yellow-400" id="waFooter" target="_blank"></a></div>
+      <div class="rounded-xl border border-[var(--border)] px-4 py-2">Dar es Salaam, Tanzania</div>
     </div>
   </div>
-  <p class="text-center text-neutral-500 text-xs mt-6">© <span id="y"></span> Simba Universal Company Ltd. All rights reserved.</p>
+  <p class="text-center text-neutral-500 text-xs mt-6">© <span id="y"></span> Simba Universal Company Ltd.</p>
 </section>
 
 <!-- FLOATING WA -->
@@ -224,201 +235,160 @@
 </a>
 
 <script>
-/* ================== CONFIG ================== */
-const LIPA_NUMBER = "6121 3863";                // Selcom LIPA
-const WHATSAPP_E164 = "+25565596666";           // your WhatsApp number
-const BANK = { name: "NMB BANK",
-  accountName: "Simba Universal Company Limited",
-  tzs1: "22610045760", tzs2: "22610048958" };
-/* ============================================ */
+/* === CONFIG === */
+const LIPA_NUMBER = "6121 3863";
+const WHATSAPP_E164 = "+25565596666"; // change if needed
+const BANK = { name:"NMB BANK", accountName:"Simba Universal Company Limited", tzs1:"22610045760", tzs2:"22610048958" };
 
-/* ====== Cafe Menu with Photos & Prices ====== */
+/* === Cafe Menu (photos) === */
 const CAFE = [
-  // classic (your menu)
   {cat:"classic", code:"americano", name:"Americano (Iced/Hot)", price:7000, img:"https://images.unsplash.com/photo-1503481766315-7a586b20f66d?q=80&w=900&auto=format&fit=crop"},
   {cat:"classic", code:"cappuccino", name:"Cappuccino", price:8000, img:"https://images.unsplash.com/photo-1485808191679-5f86510681a2?q=80&w=900&auto=format&fit=crop"},
   {cat:"classic", code:"latte", name:"Latte (Iced/Hot)", price:8000, img:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=900&auto=format&fit=crop"},
   {cat:"classic", code:"espresso-s", name:"Espresso — Single", price:3000, img:"https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=900&auto=format&fit=crop"},
   {cat:"classic", code:"espresso-d", name:"Espresso — Double", price:6000, img:"https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=900&auto=format&fit=crop"},
-
-  // signature (from your sample)
   {cat:"signature", code:"caramel-latte", name:"Caramel Latte", price:10000, img:"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=900&auto=format&fit=crop"},
   {cat:"signature", code:"oat-latte", name:"Oatly Latte (Iced/Hot)", price:12000, img:"https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=900&auto=format&fit=crop"},
   {cat:"signature", code:"osmanthus-latte", name:"Osmanthus Latte", price:12000, img:"https://images.unsplash.com/photo-1461988625982-7e46a099bf4f?q=80&w=900&auto=format&fit=crop"},
   {cat:"signature", code:"grape-americano", name:"Green Grape Americano", price:8000, img:"https://images.unsplash.com/photo-1527169402691-feff5539e52c?q=80&w=900&auto=format&fit=crop"},
   {cat:"signature", code:"apple-americano", name:"Apple Americano", price:8000, img:"https://images.unsplash.com/photo-1505575972945-2804b5c9fca4?q=80&w=900&auto=format&fit=crop"},
   {cat:"signature", code:"orange-soda-americano", name:"Orange Soda Americano", price:8000, img:"https://images.unsplash.com/photo-1495605952598-956edca968d5?q=80&w=900&auto=format&fit=crop"},
-
-  // non-coffee
   {cat:"noncoffee", code:"jasmine-tea", name:"Jasmine Cold Brew Tea", price:7000, img:"https://images.unsplash.com/photo-1528892952291-009c663ce843?q=80&w=900&auto=format&fit=crop"},
   {cat:"noncoffee", code:"oolong-tea", name:"Oolong Cold Brew Tea", price:7000, img:"https://images.unsplash.com/photo-1509440159598-8b2e1c06fe5b?q=80&w=900&auto=format&fit=crop"},
   {cat:"noncoffee", code:"matcha-latte", name:"Matcha Latte (Iced/Hot)", price:10000, img:"https://images.unsplash.com/photo-1604909052743-93b2f7b6f2e3?q=80&w=900&auto=format&fit=crop"},
   {cat:"noncoffee", code:"matcha-lemon-soda", name:"Matcha Lemon Soda", price:14000, img:"https://images.unsplash.com/photo-1535914254981-b5012eebbd15?q=80&w=900&auto=format&fit=crop"},
   {cat:"noncoffee", code:"thai-milk-tea", name:"Thai Milk Tea", price:12000, img:"https://images.unsplash.com/photo-1556679343-c7306c2f31c4?q=80&w=900&auto=format&fit=crop"},
   {cat:"noncoffee", code:"hot-chocolate", name:"Hot Chocolate", price:12000, img:"https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=900&auto=format&fit=crop"},
-
-  // caffeine-free
   {cat:"caffeinefree", code:"ginger-tea", name:"Hot Black Sugar Ginger Tea", price:8000, img:"https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=900&auto=format&fit=crop"},
   {cat:"caffeinefree", code:"soda", name:"Soda", price:3000, img:"https://images.unsplash.com/photo-1497534446932-c925b458314e?q=80&w=900&auto=format&fit=crop"},
 ];
-
 const EXPORT_PRODUCTS = ["AA","AB","PB","FAQ","RB"];
 
-/* ===== Helpers ===== */
-const nfTZS = (n)=>"TZS "+(n||0).toLocaleString("en-US");
-const nfUSD = (n)=>(n||0).toLocaleString("en-US",{style:"currency",currency:"USD"});
-const onlyDigits = (s)=>(s||"").replace(/[^\d]/g,"");
+/* Helpers */
+const nfTZS = n=>"TZS "+(n||0).toLocaleString("en-US");
+const nfUSD = n=>(n||0).toLocaleString("en-US",{style:"currency",currency:"USD"});
+const onlyDigits = s=>(s||"").replace(/[^\d]/g,"");
 
-/* ===== Cafe Render ===== */
+/* Cafe render */
 document.getElementById("y").textContent = new Date().getFullYear();
 document.getElementById("cafeLipa").textContent = LIPA_NUMBER;
 document.getElementById("cartLipa").textContent = LIPA_NUMBER;
-
-const cafeGrid = document.getElementById("cafeGrid");
-let catFilter = "all";
-let cart = [];
-
+const cafeGrid=document.getElementById("cafeGrid"); let cat="all"; let cart=[];
 function renderCafe(){
-  cafeGrid.innerHTML = "";
-  CAFE.filter(i => catFilter==="all" || i.cat===catFilter).forEach(item=>{
-    const el = document.createElement("div");
-    el.className = "rounded-2xl glass card overflow-hidden";
-    el.innerHTML = `
-      <img src="${item.img}" alt="${item.name}" class="w-full h-44 object-cover">
-      <div class="p-5">
-        <div class="text-sm text-neutral-400 capitalize">${item.cat}</div>
+  cafeGrid.innerHTML="";
+  CAFE.filter(i=>cat==="all"||i.cat===cat).forEach(item=>{
+    const el=document.createElement("div");
+    el.className="rounded-2xl glass card overflow-hidden";
+    el.innerHTML=`<img src="${item.img}" alt="${item.name}" class="w-full h-48 object-cover">
+      <div class="p-5"><div class="text-xs text-neutral-400 capitalize">${item.cat}</div>
         <div class="mt-1 text-lg font-semibold">${item.name}</div>
         <div class="mt-1 font-bold text-yellow-400">${nfTZS(item.price)}</div>
         <div class="mt-3 flex gap-2">
-          <input type="number" min="1" value="1" class="w-20 rounded-lg bg-neutral-950 border border-neutral-800 px-3 py-2 qty">
-          <button class="add px-4 py-2 rounded-xl bg-yellow-400 text-neutral-900 font-semibold">Add</button>
-        </div>
-      </div>`;
-    el.querySelector(".add").onclick = ()=>{
-      const q = parseInt(el.querySelector(".qty").value||"1");
-      const existing = cart.find(c=>c.code===item.code);
-      if (existing) existing.qty += q; else cart.push({...item, qty:q});
-      renderCart();
+          <input type="number" min="1" value="1" class="w-20 rounded-lg bg-[#0d0e10] border border-[var(--border)] px-3 py-2 qty">
+          <button class="btn btn-primary add">Add</button>
+        </div></div>`;
+    el.querySelector(".add").onclick=()=>{
+      const q=parseInt(el.querySelector(".qty").value||"1");
+      const ex=cart.find(c=>c.code===item.code); if(ex) ex.qty+=q; else cart.push({...item,qty:q}); renderCart();
     };
     cafeGrid.appendChild(el);
   });
 }
-document.querySelectorAll(".cat").forEach(b=>b.onclick=()=>{catFilter=b.dataset.cat;renderCafe();});
+document.querySelectorAll(".cat").forEach(b=>b.onclick=()=>{cat=b.dataset.cat;renderCafe();});
 function renderCart(){
-  const lines = document.getElementById("cartLines");
-  lines.innerHTML = "";
+  const wrap=document.getElementById("cartLines"); wrap.innerHTML="";
   let total=0, items=0;
-  cart.forEach((it,idx)=>{
-    total += it.price*it.qty; items += it.qty;
-    const row = document.createElement("div");
+  cart.forEach((it,idx)=>{ total+=it.price*it.qty; items+=it.qty;
+    const row=document.createElement("div");
     row.className="flex items-center justify-between py-2";
-    row.innerHTML = `<div><b>${it.name}</b><span class="text-neutral-400"> — ${nfTZS(it.price)} × ${it.qty}</span></div>
-                     <button class="text-sm text-red-400 hover:underline">remove</button>`;
+    row.innerHTML=`<div><b>${it.name}</b><span class="text-neutral-400"> — ${nfTZS(it.price)} × ${it.qty}</span></div>
+                   <button class="text-sm text-red-400 hover:underline">remove</button>`;
     row.querySelector("button").onclick=()=>{cart.splice(idx,1);renderCart();};
-    lines.appendChild(row);
+    wrap.appendChild(row);
   });
-  document.getElementById("cartItems").textContent = items;
-  document.getElementById("cartTotal").textContent = nfTZS(total);
+  document.getElementById("cartItems").textContent=items;
+  document.getElementById("cartTotal").textContent=nfTZS(total);
 
-  const msg = encodeURIComponent(
-    "Cafe order:\n" +
-    cart.map(i=>`• ${i.name} × ${i.qty} — ${nfTZS(i.price*i.qty)}`).join("\n") +
-    `\nTotal: ${nfTZS(total)}\nLIPA: ${LIPA_NUMBER}\nRef: (type your payment ref)`
-  );
-  const waLink = `https://wa.me/${onlyDigits(WHATSAPP_E164)}?text=${msg}`;
-  document.getElementById("btnCafeWA").href = waLink;
-  document.getElementById("floatingWA").href = waLink;
+  const msg=encodeURIComponent("Cafe order:\n"+cart.map(i=>`• ${i.name} × ${i.qty} — ${nfTZS(i.price*i.qty)}`).join("\n")+
+    `\nTotal: ${nfTZS(total)}\nLIPA: ${LIPA_NUMBER}\nRef: (enter payment ref)`);
+  const wa=`https://wa.me/${onlyDigits(WHATSAPP_E164)}?text=${msg}`;
+  document.getElementById("btnCafeWA").href=wa; document.getElementById("floatingWA").href=wa;
 
-  const subject = encodeURIComponent("Cafe Order — Simba Coffee");
-  const body = encodeURIComponent(`Hello Simba Team,\n\n${decodeURIComponent(msg)}`);
-  document.getElementById("btnCafeEmail").href = `mailto:sales@simba.coffee?subject=${subject}&body=${body}`;
+  const subject=encodeURIComponent("Cafe Order — Simba Coffee");
+  const body=encodeURIComponent(`Hello Simba Team,\n\n${decodeURIComponent(msg)}`);
+  document.getElementById("btnCafeEmail").href=`mailto:sales@simba.coffee?subject=${subject}&body=${body}`;
 }
 renderCafe(); renderCart();
 
-/* ===== Cafe Proforma (print) ===== */
-document.getElementById("btnCafeProforma").onclick = ()=>{
-  if (!cart.length){ alert("Your cart is empty."); return; }
-  const today = new Date().toISOString().slice(0,10);
-  const ref = `SIMBA-CAFE-${today.replace(/-/g,"")}-${Math.floor(Math.random()*9000+1000)}`;
-  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
-  const rows = cart.map(i=>`<tr><td>${i.name}</td><td>${i.qty}</td><td>${i.price.toLocaleString()}</td><td>${(i.price*i.qty).toLocaleString()}</td></tr>`).join("");
-  const html = `<!doctype html><html><head><meta charset='utf-8'/><title>Cafe Proforma ${ref}</title>
-  <style>body{font-family:Arial,Helvetica,sans-serif;margin:32px;color:#111}
-  h1{font-size:22px;margin:0 0 6px} h2{font-size:14px;margin:0 0 16px;color:#444}
-  table{width:100%;border-collapse:collapse;margin-top:16px}
-  th,td{border:1px solid #ddd;padding:8px;font-size:12px} th{background:#f7f7f7;text-align:left}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px} .muted{color:#666}</style></head>
+/* Cafe Proforma (no auto-print) */
+document.getElementById("btnCafeProforma").onclick=()=>{
+  if(!cart.length){alert("Your cart is empty.");return;}
+  const today=new Date().toISOString().slice(0,10);
+  const ref=`SIMBA-CAFE-${today.replace(/-/g,"")}-${Math.floor(Math.random()*9000+1000)}`;
+  const total=cart.reduce((s,i)=>s+i.price*i.qty,0);
+  const rows=cart.map(i=>`<tr><td>${i.name}</td><td>${i.qty}</td><td>${i.price.toLocaleString()}</td><td>${(i.price*i.qty).toLocaleString()}</td></tr>`).join("");
+  const html=`<!doctype html><html><head><meta charset='utf-8'/><title>Cafe Proforma ${ref}</title>
+  <style>body{font-family:Inter,Arial;margin:32px;color:#111}table{width:100%;border-collapse:collapse;margin-top:14px}
+  th,td{border:1px solid #ddd;padding:8px;font-size:12px}th{background:#f7f7f7;text-align:left}.muted{color:#666}.bar{margin:14px 0}</style></head>
   <body>
-  <h1>PROFORMA INVOICE — CAFE</h1>
-  <h2 class="muted">Reference: ${ref} · Date: ${today}</h2>
-  <div class="grid"><div><b>Seller:</b><br/>Simba Universal Company Ltd (Simba Coffee)<br/>Dar es Salaam, Tanzania<br/>Email: sales@simba.coffee · WhatsApp: ${WHATSAPP_E164}</div>
-  <div><b>Buyer:</b><br/>Walk-in / Online</div></div>
-  <table><thead><tr><th>Item</th><th>Qty</th><th>Price (TZS)</th><th>Amount (TZS)</th></tr></thead>
-  <tbody>${rows}</tbody><tfoot><tr><th colspan="3" style="text-align:right">TOTAL</th><th>${total.toLocaleString()}</th></tr></tfoot></table>
-  <h2>Payment</h2>
-  <ul>
-    <li><b>Selcom LIPA Namba:</b> ${LIPA_NUMBER} (Reference: ${ref})</li>
-    <li><b>${BANK.name} (TZS):</b> ${BANK.accountName} • ${BANK.tzs1} / ${BANK.tzs2}</li>
-  </ul>
-  <p class="muted">After paying, please send your LIPA receipt on WhatsApp to speed up preparation.</p>
-  <script>window.onload = () => window.print && window.print();</script>
+  <h1 style="margin:0">PROFORMA INVOICE — CAFE</h1><div class="muted">Reference: ${ref} · Date: ${today}</div>
+  <div class="bar"><b>Seller:</b> Simba Universal Company Ltd (Simba Coffee) • sales@simba.coffee • WhatsApp: ${WHATSAPP_E164}</div>
+  <table><thead><tr><th>Item</th><th>Qty</th><th>Price (TZS)</th><th>Amount (TZS)</th></tr></thead><tbody>${rows}</tbody>
+  <tfoot><tr><th colspan="3" style="text-align:right">TOTAL</th><th>${total.toLocaleString()}</th></tr></tfoot></table>
+  <h3>Payment</h3>
+  <ul><li><b>Selcom LIPA Namba:</b> ${LIPA_NUMBER} (Ref: ${ref})</li>
+      <li><b>${BANK.name} (TZS):</b> ${BANK.accountName} • ${BANK.tzs1} / ${BANK.tzs2}</li></ul>
+  <button onclick="window.print()" style="padding:.6rem 1rem;border-radius:10px;background:#111;color:#fff;border:1px solid #ddd;margin-top:12px">Print / Save PDF</button>
   </body></html>`;
-  const w = window.open("","_blank"); w.document.write(html); w.document.close();
+  const w=window.open("","_blank"); w.document.write(html); w.document.close();
 };
 
-/* ===== Export Form ===== */
-document.getElementById("expLipa").textContent = LIPA_NUMBER;
-const prodSel = document.getElementById("exportProduct");
+/* Export form */
+document.getElementById("expLipa").textContent=LIPA_NUMBER;
+const prodSel=document.getElementById("exportProduct");
 EXPORT_PRODUCTS.forEach(p=>{const o=document.createElement("option");o.value=p;o.textContent=p;prodSel.appendChild(o);});
-const expForm = document.getElementById("exportForm");
+const expForm=document.getElementById("exportForm");
 function computeExport(){
-  const d = Object.fromEntries(new FormData(expForm).entries());
-  const kg = (parseFloat(d.bags||"0")*60)||0;
-  const total = kg*(parseFloat(d.pricePerKg||"0")||0);
-  document.getElementById("expKg").textContent = `${kg.toLocaleString()} kg`;
-  document.getElementById("expAmt").textContent = nfUSD(total);
-  const wa = `https://wa.me/${onlyDigits(WHATSAPP_E164)}?text=${encodeURIComponent(
+  const d=Object.fromEntries(new FormData(expForm).entries());
+  const kg=(parseFloat(d.bags||"0")*60)||0;
+  const total=kg*(parseFloat(d.pricePerKg||"0")||0);
+  document.getElementById("expKg").textContent=`${kg.toLocaleString()} kg`;
+  document.getElementById("expAmt").textContent=nfUSD(total);
+  const wa=`https://wa.me/${onlyDigits(WHATSAPP_E164)}?text=${encodeURIComponent(
     `Export order:\n${d.product} (${d.process}) — ${d.bags} bags (60kg)\n${d.incoterm}${d.port?` – ${d.port}`:''}\nTotal est.: ${nfUSD(total)}\nLIPA: ${LIPA_NUMBER}`)}`;
-  document.getElementById("btnExportWA").href = wa;
+  document.getElementById("btnExportWA").href=wa;
   const subject="Proforma Request — Green Coffee";
   const body=`Hello Simba Team,\n\nCompany: ${d.company}\nContact: ${d.contact}\nEmail: ${d.email}\nPhone: ${d.phone}\nCountry: ${d.country}\nProduct: ${d.product} (${d.process})\nBags(60kg): ${d.bags}\nIncoterm: ${d.incoterm} ${d.port?`(Port ${d.port})`:``}\nNotes: ${d.notes||""}`;
-  document.getElementById("btnExportEmail").href = `mailto:sales@simba.coffee?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  document.getElementById("btnExportEmail").href=`mailto:sales@simba.coffee?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
-expForm.addEventListener("input", computeExport); computeExport();
+expForm.addEventListener("input",computeExport); computeExport();
 
-/* ===== Export Proforma ===== */
-document.getElementById("btnExportProforma").onclick = ()=>{
-  const d = Object.fromEntries(new FormData(expForm).entries());
-  const today = new Date().toISOString().slice(0,10);
-  const ref = `SIMBA-EXP-${today.replace(/-/g,"")}-${Math.floor(Math.random()*9000+1000)}`;
-  const kg = (parseFloat(d.bags||"0")*60)||0;
-  const price = parseFloat(d.pricePerKg||"0")||0;
-  const total = kg*price;
-  const html = `<!doctype html><html><head><meta charset='utf-8'/><title>Export Proforma ${ref}</title>
-  <style>body{font-family:Arial,Helvetica,sans-serif;margin:32px;color:#111}
-  h1{font-size:22px;margin:0 0 6px} h2{font-size:14px;margin:0 0 16px;color:#444}
-  table{width:100%;border-collapse:collapse;margin-top:16px}
-  th,td{border:1px solid #ddd;padding:8px;font-size:12px} th{background:#f7f7f7;text-align:left}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px} .muted{color:#666}</style></head>
+/* Export Proforma (no auto-print) */
+document.getElementById("btnExportProforma").onclick=()=>{
+  const d=Object.fromEntries(new FormData(expForm).entries());
+  const today=new Date().toISOString().slice(0,10);
+  const ref=`SIMBA-EXP-${today.replace(/-/g,"")}-${Math.floor(Math.random()*9000+1000)}`;
+  const kg=(parseFloat(d.bags||"0")*60)||0; const price=parseFloat(d.pricePerKg||"0")||0; const total=kg*price;
+  const html=`<!doctype html><html><head><meta charset='utf-8'/><title>Export Proforma ${ref}</title>
+  <style>body{font-family:Inter,Arial;margin:32px;color:#111}table{width:100%;border-collapse:collapse;margin-top:14px}
+  th,td{border:1px solid #ddd;padding:8px;font-size:12px}th{background:#f7f7f7;text-align:left}.muted{color:#666}.bar{margin:14px 0}</style></head>
   <body>
-  <h1>PROFORMA INVOICE — EXPORT</h1>
-  <h2 class="muted">Reference: ${ref} · Date: ${today}</h2>
-  <div class="grid"><div><b>Seller:</b><br/>Simba Universal Company Ltd (Simba Coffee)<br/>Dar es Salaam, Tanzania<br/>Email: sales@simba.coffee · WhatsApp: ${WHATSAPP_E164}</div>
-  <div><b>Buyer:</b><br/>${d.company||"—"}<br/>Attn: ${d.contact||"—"}<br/>${d.email||"—"} · ${d.phone||"—"} · ${d.country||"—"}</div></div>
+  <h1 style="margin:0">PROFORMA INVOICE — EXPORT</h1><div class="muted">Reference: ${ref} · Date: ${today}</div>
+  <div class="bar"><b>Seller:</b> Simba Universal Company Ltd (Simba Coffee) • sales@simba.coffee • WhatsApp: ${WHATSAPP_E164}</div>
+  <div class="bar"><b>Buyer:</b> ${d.company||"—"} — Attn: ${d.contact||"—"} — ${d.country||"—"} — ${d.email||"—"} — ${d.phone||"—"}</div>
   <table><thead><tr><th>Description</th><th>Process</th><th>Incoterm</th><th>Port/Destination</th><th>Qty (kg)</th><th>Unit Price (${d.currency})</th><th>Amount (${d.currency})</th></tr></thead>
   <tbody><tr><td>Tanzanian Green Coffee — ${d.product}</td><td>${d.process}</td><td>${d.incoterm}</td><td>${d.port||"—"}</td><td>${kg}</td><td>${price.toFixed(2)}</td><td>${(total).toFixed(2)}</td></tr></tbody></table>
-  <h2>Payment</h2>
-  <ul><li><b>Selcom LIPA Namba:</b> ${LIPA_NUMBER} (Reference: ${ref})</li>
+  <h3>Payment</h3>
+  <ul><li><b>Selcom LIPA Namba:</b> ${LIPA_NUMBER} (Ref: ${ref})</li>
       <li><b>${BANK.name} (TZS):</b> ${BANK.accountName} • ${BANK.tzs1} / ${BANK.tzs2}</li></ul>
-  <p class="muted">Shipment subject to availability, quality approval & compliance. Payment terms by agreement (LC at Sight / Advance / Escrow).</p>
-  <script>window.onload = () => window.print && window.print();</script></body></html>`;
-  const w = window.open("","_blank"); w.document.write(html); w.document.close();
+  <button onclick="window.print()" style="padding:.6rem 1rem;border-radius:10px;background:#111;color:#fff;border:1px solid #ddd;margin-top:12px">Print / Save PDF</button>
+  </body></html>`;
+  const w=window.open("","_blank"); w.document.write(html); w.document.close();
 };
 
-/* ===== Footer WA link ===== */
-const waFooter = document.getElementById("waFooter");
-waFooter.href = `https://wa.me/${onlyDigits(WHATSAPP_E164)}`;
-waFooter.textContent = WHATSAPP_E164;
+/* Footer WA link */
+const waFooter=document.getElementById("waFooter");
+waFooter.href=`https://wa.me/${onlyDigits(WHATSAPP_E164)}`; waFooter.textContent=WHATSAPP_E164;
 </script>
 </body>
 </html>
